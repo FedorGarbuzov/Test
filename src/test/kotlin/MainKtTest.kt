@@ -515,6 +515,6 @@ class MainKtTest {
                 vkPayDay = vkDay
         )
 
-        assertEquals(0, result)
+        assertEquals(println("Превышен лимит!"), result)
     }
 }
