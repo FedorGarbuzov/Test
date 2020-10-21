@@ -82,12 +82,12 @@ class MainKtTest {
                 vkPayDay = vkDay
         )
 
-        assertEquals(println("Превышен лимит!"), result)
+        assertNull(result)
     }
 
     @Test
     fun calculatePayHigherMounthLimit_Mastercard() {
-        val mounthAmount = 650_000
+        val mounthAmount = 599_000
         val amount = 5_000
         val maxDay = 150_000
         val maxMounth = 600_000
@@ -109,7 +109,7 @@ class MainKtTest {
                 vkPayDay = vkDay
         )
 
-        assertEquals(println("Превышен лимит!"), result)
+        assertNull(result)
     }
 
     @Test
@@ -141,7 +141,7 @@ class MainKtTest {
 
     @Test
     fun calculatePayHigherMounthLimit_Maestro() {
-        val mounthAmount = 650_000
+        val mounthAmount = 599_000
         val amount = 5_000
         val maxDay = 150_000
         val maxMounth = 600_000
@@ -163,7 +163,7 @@ class MainKtTest {
                 vkPayDay = vkDay
         )
 
-        assertEquals(println("Превышен лимит!"), result)
+        assertNull(result)
     }
 
     @Test
@@ -190,7 +190,7 @@ class MainKtTest {
                 vkPayDay = vkDay
         )
 
-        assertEquals(println("Превышен лимит!"), result)
+        assertNull(result)
     }
 
     @Test
@@ -249,7 +249,7 @@ class MainKtTest {
 
     @Test
     fun calculatePayHigherMounthLimit_Visa() {
-        val mounthAmount = 650_000
+        val mounthAmount = 599_000
         val amount = 5_000
         val maxDay = 150_000
         val maxMounth = 600_000
@@ -271,7 +271,7 @@ class MainKtTest {
                 vkPayDay = vkDay
         )
 
-        assertEquals(println("Превышен лимит!"), result)
+        assertNull(result)
     }
 
     @Test
@@ -298,7 +298,7 @@ class MainKtTest {
                 vkPayDay = vkDay
         )
 
-        assertEquals(println("Превышен лимит!"), result)
+        assertNull(result)
     }
 
     @Test
@@ -358,7 +358,7 @@ class MainKtTest {
 
     @Test
     fun calculatePayHigherMounthLimit_Mir() {
-        val mounthAmount = 650_000
+        val mounthAmount = 599_000
         val amount = 5_000
         val maxDay = 150_000
         val maxMounth = 600_000
@@ -380,7 +380,7 @@ class MainKtTest {
                 vkPayDay = vkDay
         )
 
-        assertEquals(println("Превышен лимит!"), result)
+        assertNull(result)
     }
 
     @Test
@@ -407,7 +407,7 @@ class MainKtTest {
                 vkPayDay = vkDay
         )
 
-        assertEquals(println("Превышен лимит!"), result)
+        assertNull(result)
     }
 
     @Test
@@ -488,12 +488,12 @@ class MainKtTest {
                 vkPayDay = vkDay
         )
 
-        assertEquals(println("Превышен лимит!"), result)
+        assertNull(result)
     }
 
     @Test
     fun calculatePayHigherDayLimit_VkPay() {
-        val mounthAmount = 650_000
+        val mounthAmount = 450_000
         val amount = 5_000
         val maxDay = 150_000
         val maxMounth = 600_000
@@ -515,6 +515,6 @@ class MainKtTest {
                 vkPayDay = vkDay
         )
 
-        assertEquals(println("Превышен лимит!"), result)
+        assertNull(result)
     }
 }

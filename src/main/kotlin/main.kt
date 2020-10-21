@@ -9,7 +9,8 @@ fun main() {
     val payDay = 110_000
     val vkPayDay = 11_000
 
-    println(pay("VkPay", 30_000, 3_000, payMaxDay, payMaxMounth, vkPayMaxDay, vkPayMaxMounth, payDay, vkPayDay))
+    val result = pay("VkPay", 30_000, 3_000, payMaxDay, payMaxMounth, vkPayMaxDay, vkPayMaxMounth, payDay, vkPayDay)
+    println(if (result != null) "Коммиссия составила $result" else "Превышен лимит!")
 }
 
 fun pay(
@@ -22,12 +23,12 @@ fun pay(
     vkPayMaxMounth: Int,
     payDay: Int,
     vkPayDay: Int,
-): Any {
+): Int? {
     return if ((lastAmount + thisAmount) < payMaxMounth && (payDay + thisAmount) < payMaxDay) {
         when (card) {
             "Mastercard", "Maestro" -> if (lastAmount < 75_000) 0 else ((thisAmount / 100 * 0.6) + 2000).roundToInt()
             "Visa", "МИР" -> if ((thisAmount / 100 * 75) < 3500) 3500 else (thisAmount / 100 * 0.75).roundToInt()
-            else -> if ((vkPayDay + thisAmount) < vkPayMaxDay && (lastAmount + thisAmount) < vkPayMaxMounth) 0 else println("Превышен лимит!")
+            else -> if ((vkPayDay + thisAmount) < vkPayMaxDay && (lastAmount + thisAmount) < vkPayMaxMounth) 0 else null
         }
-    } else println("Превышен лимит!")
+    } else null
 }
